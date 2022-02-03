@@ -2,8 +2,9 @@ import axios from "axios";
 import {UserType} from "../redux/users-reducer";
 
 
+
 export type GetUsersRequestType = {
-    items: UserType[]
+    users: UserType[]
     error: string
     totalCount: number
 }

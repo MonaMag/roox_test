@@ -20,8 +20,7 @@ function Users() {
             <div className={s.usersBlock}>
                 <span>Список пользователей</span>
                 {users.map ( u =>
-                    <div key={u.id}>
-                    <User user={u}/>
+                    <div key={u.id}><User user={u}/>
                     </div>
                     )}
             </div>
