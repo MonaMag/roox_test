@@ -1,15 +1,22 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import s from './Users.module.css'
 import User from "./user/User";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../../bll/store";
-import {UserType} from "../../redux/users-reducer";
+import {getUsers, UserType} from "../../redux/users-reducer";
 
 
 function Users() {
-
-    const users = useSelector<AppStateType, UserType[]>(state => state.users.users)
+    const dispatch = useDispatch()
+    const users = useSelector<AppStateType, UserType[]>(state => state.users)
     console.log('users', users)
+
+
+    useEffect(() => {
+        dispatch(getUsers())
+    }, [dispatch])
+
+
     return (
         <div className={s.container}>
             <div className={s.sortBlock}>

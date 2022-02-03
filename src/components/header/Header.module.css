@@ -4,12 +4,13 @@
     align-items: center;
     height: 60px;
     width: 100vw;
-    background-color: rgb(187, 193, 196);
+    background-color: #4B51EF;
 }
 
 .title {
     margin-left: 20px;
     font-size: 18px;
+    color: white;
 }
 .navContainer {
     display: flex;
@@ -23,9 +24,9 @@
     width: 173px;
     height: 60px;
     text-decoration: none;
-    color: #282626;
+    color: #fcfafa;
     transition-delay: 0.1s;
-    opacity: 0.4;
+    opacity: 0.8;
 }
 
 /*.navLink:hover {
@@ -44,6 +45,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 .listImg {
@@ -56,4 +58,5 @@
     width: 20px;
     height: 20px;
     margin-right: 4px;
+
 }

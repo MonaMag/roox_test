@@ -3,6 +3,7 @@ import {setIsFetching} from "./app_reducer";
 import {usersAPI} from "../api/api";
 
 
+
 export type UsersActionsType = ReturnType<typeof setUsers>
 
 export type AddressType = {
@@ -34,15 +35,14 @@ export type UserType = {
 
 export type UsersStateType = typeof initState
 
-const initState = {
-    users: []  as UserType[]
-}
+const initState: UserType[] = []
+
 
 
 export const usersReducer = (state: UsersStateType = initState, action: UsersActionsType): UsersStateType => {
     switch (action.type) {
         case 'mona/usersReducer/SET_USERS':
-            return {...state, users: action.users}
+            return [...state, ...action.data]
         default:
             return state
     }
@@ -50,18 +50,23 @@ export const usersReducer = (state: UsersStateType = initState, action: UsersAct
 }
 //* Action creators ---------------------------------------------------------------------------->
 
-export const setUsers = (users: Array<UserType>) => ({type: 'mona/usersReducer/SET_USERS', users} as const)
+export const setUsers = (data: Array<UserType>) => ({type: 'mona/usersReducer/SET_USERS', data} as const)
+
+
+//* Thunk creators ---------------------------------------------------------------------------->
 
 export const getUsers = (): AppThunkType =>
     (dispatch) => {
 
         usersAPI.getUsers()
             .then(data => {
-                dispatch(setUsers(data.users))
+                debugger
+                dispatch(setUsers(data))
                 dispatch(setIsFetching(true))
             })
-            .catch( () =>
-                dispatch(setIsFetching(false))
-            )
+            .catch((error) => {
+                    console.log(error)
+                    dispatch(setIsFetching(false))
+            })
 
     }

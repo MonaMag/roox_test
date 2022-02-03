@@ -1,0 +1,26 @@
+.wrapper {
+    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F3F3F3;
+    border-radius: 8px;
+    width: 420px;
+    height: 73px;
+    margin-top: 15px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+}
+
+.link {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}

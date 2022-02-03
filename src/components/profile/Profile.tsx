@@ -1,29 +1,34 @@
 import React from 'react'
-import {useSelector} from "react-redux";
-import {AppStateType} from "../../bll/store";
-import {UserType} from "../../redux/users-reducer";
-import s from "../users/Users.module.css";
+import s from "./Profile.module.css";
+
 
 function Profile() {
 
-    const users = useSelector<AppStateType, UserType[]>(state => state.users.users)
     return (
-        <div className={s.container}>
-            <span>Профиль пользователя</span>
-            <button>Редактировать</button>
+        <div className={s.profileContainer}>
+            <div className={s.headerProfile}>
+                <span className={s.headerTitle}>Профиль пользователя</span>
+                <button className={s.headerBtn}>Редактировать</button>
+            </div>
 
-            <form>
-                <input>Name</input>
-                <input>User name</input>
-                <input>E-mail</input>
-                <input>Street</input>
-                <input>City</input>
-                <input>Zip code</input>
-                <input>Phone</input>
-                <input>Website</input>
-                <textarea>Comment</textarea>
-                <button>Отправить</button>
-            </form>
+            <div className={s.formContainer}>
+                <form className={s.formBlock}>
+                    <div className={s.formInput}>
+                        <input type='text'/>
+                        <input type='text'/>
+                        <input type='email'/>
+                        <input type='text'/>
+                        <input type='text'/>
+                        <input type='text'/>
+                        <input type='tel'/>
+                        <input type='text'/>
+                        <div><textarea value={'comment'}></textarea></div>
+                    </div>
+
+                    <div className={s.btnContainer}>
+                        <button type="submit" className={s.submitBtn}>Отправить</button></div>
+                </form>
+            </div>
         </div>
     )
 

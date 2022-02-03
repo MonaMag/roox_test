@@ -8,9 +8,49 @@
 }
 
 .sortBlock {
-    background-color: rgb(219, 225, 227);
+    height: 100%;
+    width: 155px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #BDBDBD;
+    padding: 30px 20px;
+
+}
+
+.sortBlock span {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+}
+
+.sortBlock button {
+    background: #4B51EF;
+    border-radius: 5px;
+    border: 1px;
+    margin-top: 10px;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+    padding: 5px 15px;
+
 }
 
 .usersBlock {
-    background-color: #fdf7d3
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.usersBlock > span {
+    margin: 20px 0;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+
 }
