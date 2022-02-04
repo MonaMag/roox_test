@@ -1,19 +1,19 @@
 
-export type AppReducerStateType = typeof initState;
-
-export type AppReducerActionsType = ReturnType<typeof setIsFetching>
-
-
+export type AppReducerStateType = {
+    status: RequestStatusType
+}
+export type AppReducerActionsType = ReturnType<typeof setStatus>
+export type RequestStatusType = 'idle' | 'loading' | 'succeeded' | 'failed'
 
 const initState = {
-    isFetching: false,
+    status: 'idle' as RequestStatusType,
 }
 
 
 export const appReducer =(state: AppReducerStateType = initState, action: AppReducerActionsType): AppReducerStateType => {
     switch (action.type) {
-        case 'mona/appReducer/SET_IS_FETCHING':
-            return {...state, isFetching: action.isFetching}
+        case 'mona/appReducer/SET_STATUS':
+            return {...state, status: action.status}
         default:
             return state
     }
@@ -22,5 +22,5 @@ export const appReducer =(state: AppReducerStateType = initState, action: AppRed
 
 //*  Action creators ------------------------------------------------------------------->
 
-export const setIsFetching = (isFetching: boolean) =>
-    ({type: 'mona/appReducer/SET_IS_FETCHING', isFetching} as const)
+export const setStatus = (status: RequestStatusType) =>
+    ({type: 'mona/appReducer/SET_STATUS', status} as const)

@@ -11,7 +11,6 @@ function Users() {
     const users = useSelector<AppStateType, UserType[]>(state => state.users)
     console.log('users', users)
 
-
     useEffect(() => {
         dispatch(getUsers())
     }, [dispatch])

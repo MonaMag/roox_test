@@ -12,7 +12,11 @@ export const usersAPI = {
     getUsers() {
         return axios.get<GetUsersRequestType>(`https://jsonplaceholder.typicode.com/users`)
             .then(res => res.data)
-           /* .then(json => console.log(json))*/
+    },
+    getUser(userId: number) {
+        return axios.get<UserType>(`https://jsonplaceholder.typicode.com/users/${userId}`)
+            .then(res => res.data)
+
     }
 }
 

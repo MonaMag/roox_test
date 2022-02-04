@@ -1,11 +1,9 @@
 import {AppThunkType} from "../bll/store";
-import {setIsFetching} from "./app_reducer";
+import {setStatus} from "./app_reducer";
 import {usersAPI} from "../api/api";
-
-
+import {setUserData} from "./profile-reducer";
 
 export type UsersActionsType = ReturnType<typeof setUsers>
-
 export type AddressType = {
     street: string,
     suite: string,
@@ -21,7 +19,6 @@ type CompanyType = {
     catchPhrase: string,
     bs: string
 }
-
 export type UserType = {
     id: number,
     name: string,
@@ -42,7 +39,7 @@ const initState: UserType[] = []
 export const usersReducer = (state: UsersStateType = initState, action: UsersActionsType): UsersStateType => {
     switch (action.type) {
         case 'mona/usersReducer/SET_USERS':
-            return [...state, ...action.data]
+            return [...action.data]
         default:
             return state
     }
@@ -57,16 +54,32 @@ export const setUsers = (data: Array<UserType>) => ({type: 'mona/usersReducer/SE
 
 export const getUsers = (): AppThunkType =>
     (dispatch) => {
-
+        dispatch(setStatus('loading'))
         usersAPI.getUsers()
             .then(data => {
-                debugger
                 dispatch(setUsers(data))
-                dispatch(setIsFetching(true))
+                dispatch(setStatus('succeeded'))
             })
             .catch((error) => {
                     console.log(error)
-                    dispatch(setIsFetching(false))
+                dispatch(setStatus('failed'))
+            })
+
+    }
+
+export const getUser = (userId: number): AppThunkType =>
+    (dispatch) => {
+        dispatch(setStatus('loading'))
+
+        usersAPI.getUser(userId)
+            .then(data => {
+
+                dispatch(setUserData(data))
+                dispatch(setStatus('succeeded'))
+            })
+            .catch((error) => {
+                console.log(error)
+                dispatch(setStatus('failed'))
             })
 
     }

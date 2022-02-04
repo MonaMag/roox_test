@@ -55,6 +55,13 @@
     height: 500px;
     padding: 20px;
 }
+
+.formInput label {
+    font-size: 8px;
+    line-height: 9px;
+    color: #000000;
+    font-weight: normal;
+}
 .formBlock input {
     width: 211px;
     height: 22px;
@@ -63,6 +70,10 @@
     box-sizing: border-box;
     border-radius: 5px;
     margin-bottom: 10px;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    color: rgba(0, 0, 0, 0.3);
 }
 
 .formBlock textarea {
@@ -72,13 +83,16 @@
     border: 1px solid #D8D8D8;
     box-sizing: border-box;
     border-radius: 5px;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 12px;
+    color: rgba(0, 0, 0, 0.8);
 }
 .btnContainer {
     width: 100%;
     display: flex;
     justify-content: flex-end;
     padding: 10px 0;
-
 }
 .submitBtn {
     width: 85px;

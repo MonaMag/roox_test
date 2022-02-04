@@ -1,5 +1,5 @@
 import React from "react";
-import preloader from "../../assets/preloader/Eclipse200px.gif"
+import preloader from "../../assets/preloader/preloader.gif"
 
 type PreloaderPropsType = {
     left?: string
