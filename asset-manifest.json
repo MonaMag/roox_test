@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/roox_test/static/css/main.0e48080e.css",
+    "main.js": "/roox_test/static/js/main.823b5ab3.js",
+    "static/js/787.fbe600dc.chunk.js": "/roox_test/static/js/787.fbe600dc.chunk.js",
+    "static/media/preloader.gif": "/roox_test/static/media/preloader.b2a8fa3d8baba9fc720f.gif",
+    "static/media/userList.svg": "/roox_test/static/media/userList.01a476d7204c22c21eed103a9a2825c1.svg",
+    "static/media/avatar.svg": "/roox_test/static/media/avatar.e1793e0dba359c7b003dc4a927ce35bf.svg",
+    "index.html": "/roox_test/index.html",
+    "main.0e48080e.css.map": "/roox_test/static/css/main.0e48080e.css.map",
+    "main.823b5ab3.js.map": "/roox_test/static/js/main.823b5ab3.js.map",
+    "787.fbe600dc.chunk.js.map": "/roox_test/static/js/787.fbe600dc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0e48080e.css",
+    "static/js/main.823b5ab3.js"
+  ]
+}
